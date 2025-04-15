@@ -2,6 +2,14 @@
 
 A modular and extensible text summarization application powered by a self-hosted Large Language Model (LLM). This project enables efficient data loading, summarization, evaluation, and analysis in a streamlined pipeline.
 
+## Objective
+To build a clean and maintainable summarization pipeline that:
+
+- Uses an open-source LLM (e.g., BART, T5) running locally.
+- Handles data loading, model inference, and evaluation modularly.
+- Focuses on well-structured Python code with extensibility.
+- Analyzes and reflects on model performance and limitations.
+
 ---
 
 ##  Overview
@@ -49,7 +57,11 @@ git clone https://github.com/your-username/text_summarization_pipeline.git
 cd text_summarization_pipeline
 ```
 
-2. **Install Dependencies**
+2. **Install Dependencies by creating a new env**
+   
+```bash
+conda create -n summarizer python=3.8 -y
+```
 
 ```bash
 pip install -r requirements.txt
@@ -57,7 +69,7 @@ pip install -r requirements.txt
 
 3. **Download and Prepare Dataset**
 
-- Download the dataset  [sumsum](https://huggingface.co/datasets/Samsung/samsum/tree/main) from hugging face and place it inside the `data/` directory.
+- Download the dataset  [samsum](https://huggingface.co/datasets/Samsung/samsum/tree/main) from hugging face and place it inside the `data/` directory.
 - Ensure the dataset is named correctly (e.g., `corpus.7z`).
 - Download the model as well from hugging face to run it locally from here [bart-large-cnn-samsum](https://huggingface.co/philschmid/bart-large-cnn-samsum/tree/main) and place it like this
 ```
@@ -83,12 +95,19 @@ python src/main.py
 ```
 
 This script will:
-- Load and preprocess the dataset
-- Run the summarization model
+- Load and parses the dataset
+- Summarizes dialogues using the model
 - Evaluate generated summaries using ROUGE
+- returns dialouge, reference, generated summary and scores (have a look on sam_res.txt file for output)
 ---
 
-##  Testing
+# Trade-offs and designs
+
+- Pre-trained vs. Fine-tuned: This project uses a pre-trained model with zero-shot inference. While fine-tuning could improve results, the trade-off was speed, simplicity, and hardware constraints.
+- Pipeline vs. Raw generate(): We used HuggingFace's pipeline for prototyping and readability. In production, switching to generate() allows more control (e.g., token logging)
+- ROUGE as Metric: ROUGE provides quick lexical overlap scoring but lacks semantic understanding. Future work can explore BERTScore or human evaluations.
+
+##  Testing (optional to get insights on the dataset)
 
 Run test cases with:
 
@@ -105,7 +124,7 @@ The test script will:
 
 ```
 Disclaimer and notes:
-- This project uses a pre-trained "philschmid/bart-large-cnn-samsum model" for zero-shot summarization without fine-tuning. All outputs were generated using the model as-is, focusing on pipeline structure, evaluation, and analysis
+- This project uses a pre-trained "philschmid/bart-large-cnn-samsum model" for zero-shot summarization without fine-tuning or tranining
 - Some parts of this code modules were generated or refined with the assistance of AI tools such as ChatGPT and DeepSeek. 
 - These tools were used to understand model configurations, evaluation metrics (ROUGE), and to structure the summarization pipeline effectively.
 ```
