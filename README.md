@@ -40,12 +40,6 @@ text_summarization_pipeline/
 
 ##  Setup Instructions
 
-###  Prerequisites
-
-- Python 3.8 or higher
-- Git
-- Pip
-
 ###  Steps
 
 1. **Clone the Repository**
@@ -109,3 +103,8 @@ The test script will:
 - Save results to `test_results.csv`
 
 
+"""
+Disclaimer:
+Some parts of this code modules were generated or refined with the assistance of AI tools such as ChatGPT and DeepSeek. 
+These tools were used to understand model configurations, evaluation metrics (ROUGE), and to structure the summarization pipeline effectively.
+"""
