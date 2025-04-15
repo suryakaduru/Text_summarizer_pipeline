@@ -19,12 +19,12 @@ text_summarization_pipeline/
 │   └── default.yaml             # Configuration file for the pipeline
 ├── data/
 │   └── corpus.7z                # Dataset archive (e.g., SAMSum)
-├── src/
-│   ├── data_loader.py           # Loads and preprocesses data
-│   ├── model.py                 # Summarization model configuration
-│   ├── pipeline.py              # Coordinates the summarization steps
-│   ├── evaluator.py             # Evaluation and metrics analysis
-│   └── main.py                  # Main CLI script to run the pipeline
+
+├── data_loader.py           # Loads and preprocesses data
+├── model.py                 # Summarization model configuration
+├── pipeline.py              # Coordinates the summarization steps
+├── evaluator.py             # Evaluation and metrics analysis
+├── main.py                  # Main script to run the pipeline
 ├── tests/
 │   └── test.py                  # Test script with ROUGE-based evaluation
 ├── requirements.txt             # Python dependencies
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 Run the full summarization pipeline:
 
 ```bash
-python src/main.py
+python main.py
 ```
 
 This script will:
@@ -90,10 +90,13 @@ This script will:
 
 # Trade-offs and designs
 
+ the below insights were taken from these blogs while researching 
+[ROUGE](https://www.traceloop.com/blog/evaluating-model-performance-with-the-rouge-metric-a-comprehensive-guide), [pipeline](https://discuss.huggingface.co/t/pipeline-vs-model-generate/26203)
+```
 - Pre-trained vs. Fine-tuned: This project uses a pre-trained model with zero-shot inference. While fine-tuning could improve results, the trade-off was speed, simplicity, and hardware constraints.
 - Pipeline vs. Raw generate(): We used HuggingFace's pipeline for prototyping and readability. In production, switching to generate() allows more control (e.g., token logging)
 - ROUGE as Metric: ROUGE provides quick lexical overlap scoring but lacks semantic understanding. Future work can explore BERTScore or human evaluations.
-
+```
 ##  Testing (optional to get insights on the dataset)
 
 Run test cases with:
@@ -105,8 +108,8 @@ python tests/test.py
 The test script will:
 - Load a subset of the dataset
 - Generate summaries
-- Evaluate using ROUGE
-- Save results to `test_results.csv`
+- gets lowest and highest scores for dialouges in the subset
+  
 
 
 ```
