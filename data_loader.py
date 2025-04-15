@@ -4,6 +4,8 @@ from datasets import DatasetDict, Dataset
 import logging
 
 #reference: https://huggingface.co/datasets/Samsung/samsum/blob/main/samsum.py
+#https://stackoverflow.com/questions/32797851/how-to-read-contents-of-7z-file-using-python
+
 class DataLoader:
     def __init__(self, data_path="data/corpus.7z"):
         """Initialize with path to data"""
@@ -11,7 +13,9 @@ class DataLoader:
         self.logger = logging.getLogger(__name__)
 
     def load(self) -> DatasetDict:
-        """Load and return dataset"""
+        #Loading and return dataset#
+        #reads the archive file and DatasetDict is memory efficient 
+        #can use "datasets.load_dataset()" for large datasets
         try:
             with py7zr.SevenZipFile(self.data_path, 'r') as archive:
                 files = archive.readall()
