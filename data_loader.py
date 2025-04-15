@@ -3,6 +3,7 @@ import py7zr
 from datasets import DatasetDict, Dataset
 import logging
 
+#reference: https://huggingface.co/datasets/Samsung/samsum/blob/main/samsum.py
 class DataLoader:
     def __init__(self, data_path="data/corpus.7z"):
         """Initialize with path to data"""
