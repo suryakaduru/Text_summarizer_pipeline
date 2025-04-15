@@ -1,9 +1,9 @@
 
 ## Summary of Findings from Working with the Dataset
-### Note: only a small subset(50 summaries) of tranining data was used for evaluation 
+#### Note: only a small subset(50 summaries) of tranining data was used for evaluation 
 
 ### Dataset Characteristics
-- The dataset consists of short dialogues and their manually written summaries.
+- The dataset consists of short dialogues and their manually written summaries (~16k).
 - Dialogues vary in length and complexity, with some containing multiple speakers and intricate interactions.
 
 ### Model Performance
@@ -28,24 +28,7 @@
 
 ## Evaluation Summary
 
-| Metric                | Value   |
-|-----------------------|---------|
-| Count                 | 50      |
-| Mean ROUGE-L F1       | 0.4544  |
-| Std Dev ROUGE-L F1    | 0.2067  |
-| Min ROUGE-L F1        | 0.1395  |
-| 25th Percentile       | 0.2785  |
-| Median                | 0.4359  |
-| 75th Percentile       | 0.5860  |
-| Max ROUGE-L F1        | 0.9286  |
-| Mean Dialogue Length  | 116.98  |
-| Std Dev Dialogue Len. | 81.02   |
-| Min Dialogue Length   | 15      |
-| Max Dialogue Length   | 341     |
-| Mean Speakers         | 2.52    |
-| Std Dev Speakers      | 1.34    |
-| Min Speakers          | 2       |
-| Max Speakers          | 9       |
+![Screenshot 2025-04-15 120420](https://github.com/user-attachments/assets/409454d2-9c1d-4a6e-a91c-0e3b69e1d7ff)
 
 ### Top 3 Best Summaries
 
@@ -74,17 +57,5 @@
 
 ### Error Analysis
 - Common issues include misunderstanding complex interactions and speaker switches.
+- human evaluation
 
-## Recommendations for Future Work
-
-### Fine-Tuning
-- Use larger, more diverse datasets.
-- Try different training strategies for complex dialogues.
-
-### Preprocessing and Postprocessing
-- Add tokenization, normalization, and filtering.
-- Improve grammaticality and relevance of outputs.
-
-### Advanced Evaluation
-- Use BERTScore, METEOR for richer evaluation.
-- Add human evaluation to judge quality and coherence.
