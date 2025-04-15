@@ -1,10 +1,10 @@
-# 📝 Modular Text Summarization Pipeline
+#  Modular Text Summarization Pipeline
 
 A modular and extensible text summarization application powered by a self-hosted Large Language Model (LLM). This project enables efficient data loading, summarization, evaluation, and analysis in a streamlined pipeline.
 
 ---
 
-## 📌 Overview
+##  Overview
 
 This project aims to build a modular text summarization system with the following components:
 
@@ -16,7 +16,7 @@ This project aims to build a modular text summarization system with the followin
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 text_summarization_pipeline/
@@ -38,15 +38,15 @@ text_summarization_pipeline/
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
-### ✅ Prerequisites
+###  Prerequisites
 
 - Python 3.8 or higher
 - Git
 - Pip
 
-### 🧭 Steps
+###  Steps
 
 1. **Clone the Repository**
 
@@ -63,16 +63,24 @@ pip install -r requirements.txt
 
 3. **Download and Prepare Dataset**
 
-- Download the dataset (e.g., SAMSum) and place it inside the `data/` directory.
+- Download the dataset  [sumsum](https://huggingface.co/datasets/Samsung/samsum/tree/main) from hugging face and place it inside the `data/` directory.
 - Ensure the dataset is named correctly (e.g., `corpus.7z`).
-
+- Dowmload the model as well from hugging face to run it locally from here [bart-large-cnn-samsum](https://huggingface.co/philschmid/bart-large-cnn-samsum/tree/main) and place it like this
+```
+- models/
+    └── distilbart/
+        ├── config.json
+        ├── pytorch_model.bin
+        ├── vocab.json
+        └── merges.txt
+```
 4. **Configure the Pipeline**
 
 - Edit `configs/default.yaml` to set paths, model settings, logging preferences, etc.
 
 ---
 
-## 🚀 Running the Pipeline
+##  Running the Pipeline
 
 Run the full summarization pipeline:
 
@@ -84,11 +92,9 @@ This script will:
 - Load and preprocess the dataset
 - Run the summarization model
 - Evaluate generated summaries using ROUGE
-- Log and store results
-
 ---
 
-## ✅ Testing
+##  Testing
 
 Run test cases with:
 
@@ -102,50 +108,4 @@ The test script will:
 - Evaluate using ROUGE
 - Save results to `test_results.csv`
 
----
 
-## 📊 Insights
-
-### 🔍 Analysis of Results
-
-- **ROUGE Scores**: Measure similarity between generated and reference summaries.
-- **Dialogue Complexity**: Number of speakers and length of dialogue affect summarization quality.
-
-### ⚠️ Observations
-
-- **Challenging Samples**: Multi-speaker or long dialogues are harder to summarize.
-- **Common Issues**: Missed key points, irrelevant outputs.
-
----
-
-## 🔧 Preprocessing & Postprocessing
-
-- **Preprocessing**: Tokenization, normalization, stop-word removal.
-- **Postprocessing**: Filtering filler phrases, grammar correction.
-
----
-
-## ⚠️ Limitations & Improvements
-
-### Limitations
-
-- Performance may vary based on dataset and model choice.
-- Dataset size may limit generalization capabilities.
-
-### Future Improvements
-
-- Fine-tune on domain-specific data.
-- Add hyperparameter tuning modules.
-- Incorporate advanced metrics like **BERTScore**.
-
----
-
-## 🌟 Optional Enhancements
-
-- **🔁 Hyperparameter Tuning**: Add grid/random search for better performance.
-- **📈 Visualization**: Create performance dashboards.
-- **🧠 Fine-tuning**: Adapt model to your custom dataset.
-
----
-
-Feel free to contribute or customize the pipeline to suit your needs. This modular structure makes it easy to extend and experiment with different summarization models and evaluation techniques.
