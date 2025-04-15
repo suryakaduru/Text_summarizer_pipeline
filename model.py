@@ -4,6 +4,7 @@ import torch
 import yaml
 
 # The below summarization logic (pipeline, config-based generation) was partially guided by suggestions from ChatGPT and Deepkseek.
+# https://huggingface.co/philschmid/bart-large-cnn-samsum/tree/main : took reference for loading the model
 
 class SummarizationModel:
     def __init__(self, config_path="configs/default.yaml"):
@@ -15,6 +16,7 @@ class SummarizationModel:
         self.tokenizer = None
         self._load_model()
 
+   #ref: https://stackoverflow.com/questions/64115827/how-to-pass-yaml-file-path-to-different-modules-and-load-configuration-based-on
     def _load_config(self, config_path):
         """Load settings from YAML file"""
         try:
@@ -25,8 +27,9 @@ class SummarizationModel:
             raise
 
     def _load_model(self):
-        """Load model files from disk"""
+        """Load model files from local """
         try:
+            #https://stackoverflow.com/questions/62472238/autotokenizer-from-pretrained-fails-to-load-locally-saved-pretrained-tokenizer
             model_path = self.config["model"]["local_path"]
             self.tokenizer = AutoTokenizer.from_pretrained(model_path)
             self.model = AutoModelForSeq2SeqLM.from_pretrained(model_path).to(self.device)
@@ -42,7 +45,8 @@ class SummarizationModel:
             raise
 
     def summarize(self, text: str) -> str:
-        """Generate summary using config settings"""
+        #Generate summary using config settings from YAML file
+        #took assistance from deepseek for the params loading
         params = self.config["model"]["generation"]
         try:
             result = self.pipeline(
