@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 - Download the dataset  [sumsum](https://huggingface.co/datasets/Samsung/samsum/tree/main) from hugging face and place it inside the `data/` directory.
 - Ensure the dataset is named correctly (e.g., `corpus.7z`).
-- Dowmload the model as well from hugging face to run it locally from here [bart-large-cnn-samsum](https://huggingface.co/philschmid/bart-large-cnn-samsum/tree/main) and place it like this
+- Download the model as well from hugging face to run it locally from here [bart-large-cnn-samsum](https://huggingface.co/philschmid/bart-large-cnn-samsum/tree/main) and place it like this
 ```
 - models/
     └── distilbart/
@@ -103,8 +103,8 @@ The test script will:
 - Save results to `test_results.csv`
 
 
-"""
+```
 Disclaimer:
 Some parts of this code modules were generated or refined with the assistance of AI tools such as ChatGPT and DeepSeek. 
 These tools were used to understand model configurations, evaluation metrics (ROUGE), and to structure the summarization pipeline effectively.
-"""
+```
