@@ -19,12 +19,12 @@ text_summarization_pipeline/
 │   └── default.yaml             # Configuration file for the pipeline
 ├── data/
 │   └── corpus.7z                # Dataset archive (e.g., SAMSum)
-
-├── data_loader.py           # Loads and preprocesses data
-├── model.py                 # Summarization model configuration
-├── pipeline.py              # Coordinates the summarization steps
-├── evaluator.py             # Evaluation and metrics analysis
-├── main.py                  # Main script to run the pipeline
+├─src
+│ └── data_loader.py           # Loads and preprocesses data
+│ └── model.py                 # Summarization model configuration
+│ └──pipeline.py              # Coordinates the summarization steps
+│ └── evaluator.py             # Evaluation and metrics analysis
+│ └── main.py                  # Main script to run the pipeline
 ├── tests/
 │   └── test.py                  # Test script with ROUGE-based evaluation
 ├── requirements.txt             # Python dependencies
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 Run the full summarization pipeline:
 
 ```bash
-python main.py
+python src/main.py
 ```
 
 This script will:
