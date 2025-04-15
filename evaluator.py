@@ -3,6 +3,10 @@ from rouge_score import rouge_scorer
 import logging
 import yaml
 
+#https://github.com/huggingface/evaluate/blob/main/metrics/rouge/rouge.py
+# Used DeepSeek to understand how to extract f-measure from ROUGE metrics cleanly.
+
+
 class Evaluator:
     def __init__(self, config_path="configs/default.yaml"):
         """Initialize with metrics from config"""
@@ -15,6 +19,7 @@ class Evaluator:
             use_stemmer=True
         )
 
+    #https://github.com/pltrdy/rouge
     def evaluate(self, reference: str, hypothesis: str) -> dict:
         """Calculate and return scores"""
         try:
