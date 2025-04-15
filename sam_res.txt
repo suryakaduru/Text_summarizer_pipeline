@@ -1,0 +1,85 @@
+%runfile C:/Users/surya/Downloads/LLM_SUM/main.py --wdir
+Reloaded modules: data_loader, model, evaluator, pipeline
+Using device: NVIDIA GeForce GTX 1650 Ti
+2025-04-15 12:38:27,168 [INFO] Using default tokenizer.
+Your max_length is set to 60, but your input_length is only 31. Since this is a summarization task, where outputs shorter than the input are typically wanted, you might consider decreasing max_length manually, e.g. summarizer('...', max_length=15)
+Your max_length is set to 60, but your input_length is only 38. Since this is a summarization task, where outputs shorter than the input are typically wanted, you might consider decreasing max_length manually, e.g. summarizer('...', max_length=19)
+Your max_length is set to 60, but your input_length is only 50. Since this is a summarization task, where outputs shorter than the input are typically wanted, you might consider decreasing max_length manually, e.g. summarizer('...', max_length=25)
+
+Sample 1:
+Dialogue: Amanda: I baked  cookies. Do you want some?
+Jerry: Sure!
+Amanda: I'll bring you tomorrow :-)
+Reference: Amanda baked cookies and will bring Jerry some tomorrow.
+Generated: Amanda baked cookies and will bring them to Jerry tomorrow.
+Scores:
+  rouge1: 0.84
+  rougeL: 0.84
+
+Sample 2:
+Dialogue: Olivia: Who are you voting for in this election? 
+Oliver: Liberals as always.
+Olivia: Me too!!
+Oliver: Great
+Reference: Olivia and Olivier are voting for liberals in this election. 
+Generated: Olivia and Oliver are voting for Liberals in this election.
+Scores:
+  rouge1: 0.90
+  rougeL: 0.90
+
+Sample 3:
+Dialogue: Tim: Hi, what's up?
+Kim: Bad mood tbh, I was going to do lots of stuff but ended up procrastinating
+Tim: What did you plan on doing?
+Kim: Oh you know, uni stuff and unfucking my room
+Kim: Maybe tomorrow I'll move my ass and do everything
+Kim: We were going to defrost a fridge so instead of shopping I'll eat some defrosted veggies
+Tim: For doing stuff I recommend Pomodoro technique where u use breaks for doing chores
+Tim: It really helps
+Kim: thanks, maybe I'll do that
+Tim: I also like using post-its in kaban style
+Reference: Kim may try the pomodoro technique recommended by Tim to get more stuff done.
+Generated: Kim is in a bad mood. She was going to do a lot of stuff but she procrastinated. Tim recommends Pomodoro technique where you use breaks for doing chores.
+Scores:
+  rouge1: 0.33
+  rougeL: 0.14
+
+Sample 4:
+Dialogue: Edward: Rachel, I think I'm in ove with Bella..
+rachel: Dont say anything else..
+Edward: What do you mean??
+rachel: Open your fu**ing door.. I'm outside
+Reference: Edward thinks he is in love with Bella. Rachel wants Edward to open his door. Rachel is outside. 
+Generated: Edward thinks he's in love with Bella. Rachel is outside and she's waiting for him.
+Scores:
+  rouge1: 0.57
+  rougeL: 0.57
+
+Sample 5:
+Dialogue: Sam: hey  overheard rick say something
+Sam: i don't know what to do :-/
+Naomi: what did he say??
+Sam: he was talking on the phone with someone
+Sam: i don't know who
+Sam: and he was telling them that he wasn't very happy here
+Naomi: damn!!!
+Sam: he was saying he doesn't like being my roommate
+Naomi: wow, how do you feel about it?
+Sam: i thought i was a good rommate
+Sam: and that we have a nice place
+Naomi: that's true man!!!
+Naomi: i used to love living with you before i moved in with me boyfriend
+Naomi: i don't know why he's saying that
+Sam: what should i do???
+Naomi: honestly if it's bothering you that much you should talk to him
+Naomi: see what's going on
+Sam: i don't want to get in any kind of confrontation though
+Sam: maybe i'll just let it go
+Sam: and see how it goes in the future
+Naomi: it's your choice sam
+Naomi: if i were you i would just talk to him and clear the air
+Reference: Sam is confused, because he overheard Rick complaining about him as a roommate. Naomi thinks Sam should talk to Rick. Sam is not sure what to do.
+Generated: Sam overheard Rick saying that he doesn't like being Sam's roommate. Naomi used to live with Sam before she moved in with her boyfriend. 
+Scores:
+  rouge1: 0.34
+  rougeL: 0.26
