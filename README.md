@@ -62,7 +62,7 @@ pip install -r requirements.txt
 - Download the model as well from hugging face to run it locally from here [bart-large-cnn-samsum](https://huggingface.co/philschmid/bart-large-cnn-samsum/tree/main) and place it like this
 ```
 - models/
-    └── distilbart/
+    └── bart-large-cnn-samsum/
         ├── config.json
         ├── pytorch_model.bin
         ├── vocab.json
