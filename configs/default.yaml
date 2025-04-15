@@ -1,0 +1,24 @@
+# configs/default.yaml
+
+model:
+  name: "bart-large-cnn-samsum"  # Model identifier
+  local_path: "models/bart-large-cnn-samsum"  # Where model files are stored
+  generation:
+    max_length: 60       # Maximum tokens in summary
+    min_length: 10       # Minimum tokens in summary
+    no_repeat_ngram_size: 2  # Prevent word repetition
+    num_beams: 4         # Higher = better quality but slower
+    early_stopping: True # Stop when summary is good enough
+
+data:
+  source_path: "data/corpus.7z"  # Path to compressed dataset
+  max_samples: 5         # How many samples to process
+  test_split_size: 0.2   # 20% for testing if splitting needed
+
+evaluation:
+  metrics: ["rouge1", "rougeL"]  # We don't need rouge2
+  min_acceptable_score: 0.6      # Threshold for good summaries
+
+logging:
+  level: "INFO"          # How detailed logs should be
+  format: "%(asctime)s [%(levelname)s] %(message)s"  # Simpler format
