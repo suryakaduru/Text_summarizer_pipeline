@@ -9,26 +9,13 @@ To build a clean and maintainable summarization pipeline that:
 - Handles data loading, model inference, and evaluation modularly.
 - Focuses on well-structured Python code with extensibility.
 - Analyzes and reflects on model performance and limitations.
-
----
-
-##  Overview
-
-This project aims to build a modular text summarization system with the following components:
-
-- **Data Loader**: Loads and prepares the dataset.
-- **Model**: Loads and configures the summarization model.
-- **Pipeline**: Orchestrates data flow and executes summarization.
-- **Evaluator**: Evaluates summaries using metrics like ROUGE.
-- **Main Runner**: CLI script to run the complete pipeline.
-
 ---
 
 ##  Project Structure
 
 ```
 text_summarization_pipeline/
-├── configs/
+├─ configs/
 │   └── default.yaml             # Configuration file for the pipeline
 ├── data/
 │   └── corpus.7z                # Dataset archive (e.g., SAMSum)
