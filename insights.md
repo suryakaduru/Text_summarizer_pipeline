@@ -1,5 +1,6 @@
 
 ## Summary of Findings from Working with the Dataset
+### Note: only a small subset(50 summaries) of tranining data was used for evaluation 
 
 ### Dataset Characteristics
 - The dataset consists of short dialogues and their manually written summaries.
@@ -66,10 +67,10 @@
 
 ### Complexity and Length
 - Longer dialogues with more speakers are harder to summarize.
-- Model performs better on shorter, simpler texts.
+- Model performs better on shorter, simpler texts. eg: for the first sequence of text it has score of 0.9
 
 ### Consistency
-- Performance varies significantly, suggesting need for additional training.
+- Performance varies significantly, suggesting need for additional training. (FUTURE WORK)
 
 ### Error Analysis
 - Common issues include misunderstanding complex interactions and speaker switches.
