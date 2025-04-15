@@ -105,12 +105,9 @@ The test script will:
 
 ```
 Disclaimer and notes:
-“This project uses a pre-trained "philschmid/bart-large-cnn-samsum model" for zero-shot summarization without fine-tuning. All outputs were generated using the model as-is, focusing on pipeline structure, evaluation, and analysis.”
+This project uses a pre-trained "philschmid/bart-large-cnn-samsum model" for zero-shot summarization without fine-tuning. All outputs were generated using the model as-is, focusing on pipeline structure, evaluation, and analysis
 Some parts of this code modules were generated or refined with the assistance of AI tools such as ChatGPT and DeepSeek. 
 These tools were used to understand model configurations, evaluation metrics (ROUGE), and to structure the summarization pipeline effectively.
 ```
 
-
-
-> “This project uses a pre-trained "philschmid/bart-large-cnn-samsum model" for zero-shot summarization without fine-tuning. All outputs were generated using the model as-is, focusing on pipeline structure, evaluation, and analysis.”
 
